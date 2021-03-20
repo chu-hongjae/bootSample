@@ -31,6 +31,7 @@ public class SysAuthMatchUrlService {
     return repository.findAll();
   }
 
+
   public void add(SysAuthMatchUrlVO paramVO) {
     repository.save(paramVO);
   }

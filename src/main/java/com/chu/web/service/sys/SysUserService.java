@@ -17,6 +17,10 @@ public class SysUserService {
   @Autowired
   private SysComCodeRepository codeRepository;
 
+  public SysUserVO getUserById(SysUserVO sysUserVO){
+    return repository.findByUserIdAndUserPwd(sysUserVO.getUserId() , sysUserVO.getUserPwd());
+  }
+
   public List<SysUserVO> getUserList() {
     return repository.findAll();
   }

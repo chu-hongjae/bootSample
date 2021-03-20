@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SysUserRepository extends JpaRepository<SysUserVO, Long> {
 
-  public List<SysUserVO> findByUserIdAndUserPwd(String userId,String userPwd);
+  public SysUserVO findByUserIdAndUserPwd(String userId,String userPwd);
 
 
 }

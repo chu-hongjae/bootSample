@@ -30,6 +30,8 @@ public class JwtTokenTest {
     log.debug("token data : {}" , getTokenData(jwt));
   }
 
+
+
   public static String createToken(String userId , String userName) {
     SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
     byte[] seckeyBytes = DatatypeConverter.parseBase64Binary(SECRET_KEY);
