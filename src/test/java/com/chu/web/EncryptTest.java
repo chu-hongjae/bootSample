@@ -1,21 +1,17 @@
-package com.chu.web.common.utils;
+package com.chu.web;
 
 import java.security.MessageDigest;
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
-@Converter
-public class PasswordConvertor implements AttributeConverter<String,String> {
+@Slf4j
+public class EncryptTest {
 
-  @Override
-  public String convertToDatabaseColumn(String s) {
-    return encryptSHA256(s);
+  @Test
+  public void encryptTest(){
+    log.debug(encryptSHA256("password01##!@"));
   }
 
-  @Override
-  public String convertToEntityAttribute(String s) {
-    return  s;
-  }
 
   public String encryptSHA256(String s) {
     return encrypt(s, "SHA-256");
