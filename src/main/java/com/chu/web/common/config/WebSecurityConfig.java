@@ -28,13 +28,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    addMatch(http);
+  // addMatch(http);
     http.csrf().disable()
          .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
         .authorizeRequests()
         .antMatchers("/auth/**").permitAll()
-        .antMatchers("/**").authenticated()
+      //  .antMatchers("/**").authenticated()
         .anyRequest().permitAll()
         .and()
         .formLogin().disable();

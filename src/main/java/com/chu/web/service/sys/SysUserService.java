@@ -2,6 +2,7 @@ package com.chu.web.service.sys;
 
 import com.chu.web.dao.SysComCodeRepository;
 import com.chu.web.dao.SysUserRepository;
+import com.chu.web.vo.sys.SysGetTokenVO;
 import com.chu.web.vo.sys.SysUserVO;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class SysUserService {
   private SysComCodeRepository codeRepository;
 
   @Transactional(readOnly = true)
-  public SysUserVO getUserById(SysUserVO sysUserVO){
+  public SysUserVO getUserById(SysGetTokenVO sysUserVO){
     return repository.findByUserIdAndUserPwd(sysUserVO.getUserId() , sysUserVO.getUserPwd());
   }
 

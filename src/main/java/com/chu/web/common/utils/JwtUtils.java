@@ -16,7 +16,7 @@ import javax.xml.bind.DatatypeConverter;
  * @author chu
  * @version 1.0.0
  * @since 2021-03-21 오전 6:40
- *
+ * JWT (json web token )
 */
 public class JwtUtils {
   private static final String SECRET_KEY = UUID.randomUUID().toString();

@@ -4,11 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
 public class RequestParamInterceptor implements HandlerInterceptor {
+
 
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -16,7 +19,8 @@ public class RequestParamInterceptor implements HandlerInterceptor {
       log.debug("#########################################################################");
       log.info("req url : {}", request.getRequestURI());
       log.info("reqbody : {}", request.getAttribute("reqBody"));
-    log.debug("#########################################################################");
+      log.debug("#########################################################################");
+
     return true;
   }
 

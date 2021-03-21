@@ -25,6 +25,7 @@ public class ReqBodyLogFIlter implements Filter {
     ReadableRequestBodyWrapper wrapper = new ReadableRequestBodyWrapper(
         (HttpServletRequest) servletRequest);
 
+
     servletRequest.setAttribute("reqBody", wrapper.getRequestBody());
 
     filterChain.doFilter(wrapper, servletResponse);

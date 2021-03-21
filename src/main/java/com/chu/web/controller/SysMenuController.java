@@ -7,15 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/sys/menu")
-@Controller
+
+@RestController
 public class SysMenuController {
 
   @Autowired
   SysMenuService service;
 
-  @PostMapping(path = "/getList")
+  @PostMapping(path = "/sys/menu/getList")
   public List<SysMenuVO> getList() {
     return service.getMenuList();
   }
